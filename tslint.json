@@ -1,0 +1,59 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts"]
+  },
+  "rules": {
+    "interface-over-type-literal": false,
+    "no-unused-expression": false,
+    "no-implicit-dependencies": false,
+    "no-object-literal-type-assertion": false,
+    "ordered-imports": false,
+    "no-submodule-imports": false,
+    "jsx-boolean-value": false,
+    "no-var-requires": false,
+    "no-console": false,
+    "jsx-no-multiline-js": false,
+    "object-literal-sort-keys": false,
+    "arrow-parens": false,
+    "class-name": true,
+    "member-ordering": false,
+    "comment-format": [true, "check-space"],
+    "indent": [true, "spaces"],
+    "ter-indent": ["error", 2],
+    "object-curly-spacing": ["error", "always"],
+    "no-eval": true,
+    "no-internal-module": true,
+    "no-trailing-whitespace": true,
+    "no-unsafe-finally": true,
+    "no-var-keyword": true,
+    "one-line": [true, "check-open-brace", "check-whitespace"],
+    "prefer-conditional-expression": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "triple-equals": [true, "allow-null-check"],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "variable-name": [true, "ban-keywords"],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ]
+  }
+}
