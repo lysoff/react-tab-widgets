@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import cancelSVG from './assets/close.svg';
 
-export const Layout = styled.div`
+export const Layout = styled<any, any>('div')`
   position: relative;
   height: 100%;
   width: 100%;
@@ -24,14 +24,14 @@ export const WidgetTab = styled<WidgetTabProps, any>('div')`
   font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
 `;
 
-export const Widget = styled.div`
+export const Widget = styled<any, any>('div')`
   position: relative;
   z-index: 0;
   width: 100%;
   height: 100%;
 `;
 
-export const WidgetTabs = styled.div`
+export const WidgetTabs = styled<any, any>('div')`
   height: 1.8rem;
   display: flex;
 
@@ -40,7 +40,7 @@ export const WidgetTabs = styled.div`
   }
 `;
 
-export const Cancel = styled.div`
+export const Cancel = styled<any, any>('div')`
   position: absolute;
   height: 0.6rem;
   width: 0.6rem;

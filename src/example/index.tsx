@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Provider, Container, connectToReactTabWidget } from '../ReactTabWidget';
+import { Provider, Container, connectToReactTabWidget } from '../react-tab-widgets';
 import { registeredWidgets } from './widgets';
 
 export const Wrapper = styled.div`
