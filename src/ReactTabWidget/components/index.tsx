@@ -44,7 +44,7 @@ export const Cancel = styled.div`
   position: absolute;
   height: 0.6rem;
   width: 0.6rem;
-  background: url(${cancelSVG.url}) no-repeat;
+  background: url(${cancelSVG}) no-repeat;
   background-size: cover;
   cursor: pointer;
   right: 0;

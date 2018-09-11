@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactTabWidget from '../ReactTabWidget';
-import Provider from '../ReactTabWidget/TabWidgetProvider';
-import connectToReactTabWidget from '../ReactTabWidget/connectToReactTabWidget';
+import { Provider, Container, connectToReactTabWidget } from '../ReactTabWidget';
 import { registeredWidgets } from './widgets';
 
 export const Wrapper = styled.div`
@@ -43,7 +41,7 @@ export default () => (
           </WidgetLink>
         ))}
       </Widgets>
-      <ReactTabWidget
+      <Container
         getWidgetName={getWidgetName}
         getWidgetRenderedComponent={getWidgetRenderedComponent}
       />
