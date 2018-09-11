@@ -64,7 +64,7 @@ class WidgetTab extends Component<Props & DragAndDropProps> {
         innerRef={(instance: any) => connectDragSource(instance)}
       >
         {children}
-        <Cancel onClick={this.handleClick} />
+        <Cancel onClick={this.handleClick}>✖️</Cancel>
       </WidgetTabComponent>
     );
     /* tslint:enable:jsx-no-lambda */

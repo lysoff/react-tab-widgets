@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import cancelSVG from './assets/close.svg';
 
 export const Layout = styled<any, any>('div')`
   position: relative;
@@ -44,11 +43,11 @@ export const Cancel = styled<any, any>('div')`
   position: absolute;
   height: 0.6rem;
   width: 0.6rem;
-  background: url(${cancelSVG}) no-repeat;
   background-size: cover;
   cursor: pointer;
-  right: 0;
-  top: calc(50% - 0.3rem);
+  font-size: 0.8rem;
+  right: 0.2rem;
+  top: calc(50% - 0.6rem);
 `;
 
 export type WidgetTabDropzoneProps = {
