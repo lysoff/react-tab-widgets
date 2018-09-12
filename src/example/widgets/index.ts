@@ -9,7 +9,10 @@ export const register = (name: string, Component: any) => {
   const id = uuid();
   registeredWidgets[id] = {
     name,
-    Component
+    Component,
+    props: {
+      id
+    }
   };
 };
 

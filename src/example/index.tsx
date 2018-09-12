@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import uuid from 'uuid/v4';
 import { Provider, Container, connectToReactTabWidget } from '../react-tab-widgets';
 import { registeredWidgets } from './widgets';
+
+const containerRegistered: any = {};
 
 export const Wrapper = styled.div`
   display: flex;
@@ -24,11 +27,26 @@ const Link = styled.div`
 
 const WidgetLink = connectToReactTabWidget(({ children }: any) => <Link>{children}</Link>);
 
-const getWidgetName = (widgetId: any) => registeredWidgets[widgetId].name;
-const getWidgetRenderedComponent = (widgetId: any) => {
-  const { Component } = registeredWidgets[widgetId];
+const getWidgetName = (widgetId: any) =>
+  registeredWidgets[containerRegistered[widgetId].registeredWidgetId].name;
 
-  return <Component />;
+const getWidgetRenderedComponent = (widgetId: any) => {
+  const { registeredWidgetId, props } = containerRegistered[widgetId];
+
+  const { Component } = registeredWidgets[registeredWidgetId];
+
+  return <Component {...props} />;
+};
+
+const registerNewWidget = (widgetId: string, registeredWidgetId: string) => {
+  const idProp = uuid();
+
+  containerRegistered[widgetId] = {
+    props: {
+      id: idProp
+    },
+    registeredWidgetId
+  };
 };
 
 export default () => (
@@ -44,6 +62,7 @@ export default () => (
       <Container
         getWidgetName={getWidgetName}
         getWidgetRenderedComponent={getWidgetRenderedComponent}
+        onWidgetCreated={registerNewWidget}
       />
     </Wrapper>
   </Provider>

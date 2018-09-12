@@ -189,7 +189,7 @@ class Advanced extends React.Component<StateProps & ActionProps> {
           isActive={this.props.activeTabs[containerId] === item}
           onClick={this.createOnClick(containerId, item)}
         >
-          {this.props.getWidgetName(this.props.widgets[item].widget)}
+          {this.props.getWidgetName(item)}
           <WidgetTabDropzone
             onTabDrop={this.createOnTabDrop(containerId, item)}
             widgetId={item}
@@ -205,9 +205,9 @@ class Advanced extends React.Component<StateProps & ActionProps> {
   );
 
   private renderActiveWidget = (containerId: any) => {
-    const { widgets, activeTabs, getWidgetRenderedComponent } = this.props;
+    const { activeTabs, getWidgetRenderedComponent } = this.props;
 
-    return <Widget>{getWidgetRenderedComponent(widgets[activeTabs[containerId]].widget)}</Widget>;
+    return <Widget>{getWidgetRenderedComponent(activeTabs[containerId])}</Widget>;
   };
 
   private renderDropzones = (containerId: any, width: number, height: number) => {

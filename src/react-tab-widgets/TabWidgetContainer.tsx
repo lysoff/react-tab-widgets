@@ -7,6 +7,8 @@ import { Container, Position } from './types';
 type Props = {
   getWidgetName: any;
   getWidgetRenderedComponent: any;
+  onWidgetCreated?: any;
+  onStructureChanged?: any;
 };
 
 type State = {
@@ -135,19 +137,25 @@ export default class ReactTabWidgetContainer extends React.Component<Props, Stat
   };
 
   private createWidget = (widgetId: string, registeredWidgetId: string) => {
-    this.setState((state: State) =>
-      update(state, {
-        widgets: {
-          [widgetId]: {
-            $set: {
-              widget: registeredWidgetId,
-              props: {
-                newWidget: true
+    this.setState(
+      (state: State) =>
+        update(state, {
+          widgets: {
+            [widgetId]: {
+              $set: {
+                widget: registeredWidgetId,
+                props: {
+                  newWidget: true
+                }
               }
             }
           }
+        }),
+      () => {
+        if (this.props.onWidgetCreated) {
+          this.props.onWidgetCreated(widgetId, registeredWidgetId);
         }
-      })
+      }
     );
   };
 
