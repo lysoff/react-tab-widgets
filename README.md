@@ -39,6 +39,10 @@ export default () => (
  - `onWidgetCreated` - `(widgetId: string, registeredWidgetId: string) => void`. Event handler for new widget being created. `widgetId` is a new `uuid/v4` identifier that's generated under the hood (identifier creation would be extracted from hardcode in next minor version), `registeredWidgetId` - consider it as a widget type which was provided by draggable widget from outside (here and below, "registered" means registered as a type).
 
 ```typescript
+import { Container } from 'react-tab-widgets';
+
+...
+
 <Container
   getWidgetName={getWidgetName}
   getWidgetRenderedComponent={getWidgetRenderedComponent}
@@ -52,6 +56,10 @@ HOC which provides `registeredWidgetId` prop handling. This `registeredWidgetId`
 
 Let's imagine we have a pallete of registered widgets to add. So, we need draggable link that our `Container` is able to handle. To create draggable link component we use `connectToReactTabWidget`:
 ```typescript
+import { connectToReactTabWidget } from 'react-tab-widgets';
+
+...
+
 const WidgetLink = connectToReactTabWidget(({ children }: any) => <Link>{children}</Link>);
 
 // rendering somewhere inside `Provider`
