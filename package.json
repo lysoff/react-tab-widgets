@@ -1,9 +1,9 @@
 {
   "name": "react-tab-widgets",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "repository": {
     "type": "git",
-		"url": "https://github.com/lysoff/react-tab-widgets.git"
+    "url": "https://github.com/lysoff/react-tab-widgets.git"
   },
   "license": "MIT",
   "main": "build/dist/react-tab-widgets/index.js",
